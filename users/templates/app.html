@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<header class="Header">
+		<div class="HeaderWelcome">
+			Bienvenido {{ user }}
+			<a href="{% url 'logout' %}">Cerrar</a>
+		</div>
+		<div class="HeaderUser">
+			<figure class="HeaderUser-avatar">
+				<img src="{{ user.avatar.url }}" width="50px" />
+				<figcaption class="HeaderUser-name">
+					{{ user.nombre }}
+				</figcaption>
+			</figure>
+		</div>
+	</header>
+{% endblock content %}

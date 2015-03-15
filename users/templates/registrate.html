@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Crea una cuenta aqui</h2>
+	<div class="form">
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<table>
+				{{ form.as_table }}
+			</table>
+			<input type="submit" />
+		</form>
+	</div>
+	<h3>
+		Si ya estas registrado entra 
+		<a href="{% url 'login' %}">aqui</a>
+	</h3>
+{% endblock content %}

@@ -38,7 +38,7 @@ def log_in(request):
 def registrate(request):
 	if request.method == "POST":
 		form = UserCreationForm(request.POST, request.FILES)
-		
+
 		if form.is_valid():
 			form.save()
 			email = request.POST["email"]
@@ -49,7 +49,7 @@ def registrate(request):
 			if user is not None:
 				if user.is_active:
 					login(request, user)
-					return redirect("/register/")
+					return redirect("/app/")
 				else:
 					return HttpResponse("Usuario inactivo")
 			else:
