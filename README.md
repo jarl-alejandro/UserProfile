@@ -27,11 +27,13 @@ Haci que lo importamos con otros clases mas asi:
 from django.contrib.auth.models import (
 	BaseUserManager, AbstractBaseUser, PermissionsMixin
 )
-AbstractBaseUser => AbstractBaseUser proporciona la implementación del núcleo de un usuario modelo, incluyendo contraseñas hash y el restablecimiento de contraseñas
 
-BaseUserManager => Nos sirvira como un admisitrado para crear superusuarios y usarios staff
 
-PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
+####AbstractBaseUser => AbstractBaseUser proporciona la implementación del núcleo de un usuario modelo, incluyendo contraseñas hash y el restablecimiento de contraseñas
+
+####BaseUserManager => Nos sirvira como un admisitrado para crear superusuarios y usarios staff
+
+####PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
 
 class User(PermissionsMixin, AbstractBaseUser):
 	email = models.EmailField(unique = True)
@@ -39,7 +41,6 @@ class User(PermissionsMixin, AbstractBaseUser):
 	ciudad = models.CharField(max_length = 140)
 	nombre = models.CharField(max_length = 140)
 	edad = models.IntegerField(default = 0)
-
 	is_active = models.BooleanField(default = True)
 	is_admin = models.BooleanField(default = False)
 	
