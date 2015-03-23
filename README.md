@@ -33,7 +33,7 @@ from django.contrib.auth.models import (
 
 ####BaseUserManager => Nos sirvira como un admisitrado para crear superusuarios y usarios staff
 
-####PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
+###PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
 
 class User(PermissionsMixin, AbstractBaseUser):
 	email = models.EmailField(unique = True)
