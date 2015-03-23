@@ -29,11 +29,11 @@ from django.contrib.auth.models import (
 )
 
 
-####AbstractBaseUser => AbstractBaseUser proporciona la implementación del núcleo de un usuario modelo, incluyendo contraseñas hash y el restablecimiento de contraseñas
+###### AbstractBaseUser => AbstractBaseUser proporciona la implementación del núcleo de un usuario modelo, incluyendo contraseñas hash y el restablecimiento de contraseñas
 
-####BaseUserManager => Nos sirvira como un admisitrado para crear superusuarios y usarios staff
+#### BaseUserManager => Nos sirvira como un admisitrado para crear superusuarios y usarios staff
 
-###PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
+### PermissionsMixin => Es un mixin con los permisos necesarios para el modelo de usario
 
 class User(PermissionsMixin, AbstractBaseUser):
 	email = models.EmailField(unique = True)
